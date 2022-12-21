@@ -20,8 +20,8 @@ node {
                         //bat "sed -i 's+aishwaryamv/test.*+aishwaryamv/test:${DOCKERTAG}+g' deployment.yaml"
                         bat "type deployment.yaml"
                         bat "git add ."
-                        bat "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
-                        bat "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/kubernetesmanifest.git HEAD:main"
+                        //bat "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
+                        //bat "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/kubernetesmanifest.git HEAD:main"
       }
     }
   }
