@@ -25,4 +25,12 @@ node {
     }
   }
 }
+     stage('Deploy App to kuberentes') {
+      steps {
+        script {
+          //sh "sed -i s/latest/$BUILD_NUMBER/g $WORKSPACE/deploy.yml"
+          kubernetesDeploy configs: 'deployment.yaml', kubeConfig: [path: 'kubernetes_build'], kubeconfigId: 'kubeconfig', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+        }
+      }
+    }
 }
