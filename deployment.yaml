@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: flaskdemo
-  name: flaskdemo
+    app: xai
+  name: xai
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: flaskdemo
+      app: xai
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: flaskdemo
+        app: xai
     spec:
       containers:
-      - image: aishwaryamv/test:22
-        name: flaskdemo
+      - image: gcr.io/hclsw-gcp-xai/jenkins/xaidockerimg:latest
+        name: xai
         resources: {}
 status: {}
 ---
@@ -35,4 +35,4 @@ spec:
   - port: 80
     targetPort: 5000
   selector:
-    app: flaskdemo
+    app: xai
